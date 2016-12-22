@@ -1,19 +1,16 @@
-//: Playground - noun: a place where people can play
+//: Fibonacci Playground
+//: Below are several methods of implementing the various fibonacci use cases
+//: I'll continue to add to this library as more use cases and challenges arises
 
 import UIKit
 
-var str = "Hello, playground"
-
 //: Example 1 https://bandes-stor.ch/blog/2015/08/05/the-fibonacci-sequencetype/
 
-
-func fibonacci(n:Int) -> Int {
-  
+func fibonacci(n:Int) -> Int{
   var i = 0
   var j = 1
   
-  // edge case catch the zeroes and one
-  
+  // edge case to catch the zeroes and one
   if n == 0{
     return n
   }
@@ -22,24 +19,24 @@ func fibonacci(n:Int) -> Int {
     return j
   }
   
+  // start loop
   for _ in 0..<n{
-    //(i,j) = (j, i+j) // stepping through the numbers in sequence shorter way
+    //(i,j) = (j, i+j) // stepping through the numbers in sequence shorter method
     
-    let temp = i+j // longer way
+    let temp = i+j // longer way for those that are used to the tmp storage method to sway
     i = j
     j = temp
   }
-  return i
   
+  return i
 }
 
 
 
 
-// implement the function with arrays and return arrays with the sequenc of Int
+//: Mark: Implement the function with arrays and return arrays with the sequenc of Int
 
 func fibonacciReturnArrayOfSequence(n: Int) -> [Int]{
-  
   // start with base sequence
   var seq = [0]
   
